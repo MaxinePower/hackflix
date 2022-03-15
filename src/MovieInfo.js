@@ -31,14 +31,12 @@ function MovieInfo(props) {
                 api_key: 'af33210bcc19d7df52dd93273ae88588'
             }
         }).then( function(movieInfo) {
-            console.log(movieInfo);
-
             // use the API data and update state
             setDetails(movieInfo.data)
         } )
 
     // specify that this side effect should only one time after the component has first rendered   
-    }, [] );
+    }, [movie_id] );
 
     return (
         <section className="poster">
